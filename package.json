@@ -1,0 +1,9 @@
+{
+    "name": "client.express.js",
+    "version": "0.0.1",
+    "dependencies": {
+      "buster": "0.2.1",
+      "express": "2.4.6",
+      "ejs": "0.4.3"
+    }
+}
