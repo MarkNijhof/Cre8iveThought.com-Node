@@ -4,6 +4,7 @@
     "dependencies": {
       "buster": "0.2.1",
       "express": "2.4.6",
-      "ejs": "0.4.3"
+      "ejs": "0.4.3",
+      "clientexpress": "0.7.0"
     }
 }
