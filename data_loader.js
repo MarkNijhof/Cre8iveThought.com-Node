@@ -28,7 +28,7 @@ exports.load = function(json_url, call_back) {
 }
 
 exports.load_index_data = function(call_back) {
-  data_loader.load('http://cre8ivethought.com/blog/.json/0/15/title,summary,date,url', function(index_data) {
+  data_loader.load('http://data.cre8ivethought.com/blog/.json/0/15/title,summary,date,url', function(index_data) {
     var data = {
       articles: index_data.to(5),
       previous_posts: index_data.from(5),
@@ -39,7 +39,7 @@ exports.load_index_data = function(call_back) {
 }
 
 exports.load_post_data = function(url, call_back) {
-  data_loader.load('http://cre8ivethought.com/blog/' + url + '.json', function(post_data) {
+  data_loader.load('http://data.cre8ivethought.com/blog/' + url + '.json', function(post_data) {
     call_back(post_data);
   });
 }
