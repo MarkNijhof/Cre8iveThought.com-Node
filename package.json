@@ -4,7 +4,9 @@
     "dependencies": {
       "buster": "0.2.1",
       "express": "2.4.6",
-      "ejs": "0.4.3",
-      "clientexpress": "0.7.0"
+      "stache": "0.1.0",
+      "clientexpress": "0.7.2",
+      "stylus": "0.15.4",
+	  "sugar": "0.9.5"
     }
 }

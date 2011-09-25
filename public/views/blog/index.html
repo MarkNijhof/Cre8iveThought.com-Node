@@ -1,0 +1,65 @@
+<section>
+  {{#articles}}
+	<div class="article">
+	    <header>
+	      <h1><a href="{{url}}">{{title}}</a></h1>
+	    </header>
+
+	    <div class="content">
+	      {{{summary}}}
+	    </div>
+
+	    <footer>
+	      <span class="date_list">{{date}}{{#show_updated_date}} (last updated on {{updated}}){{/show_updated_date}}</span>
+	      <br />
+	      <span class="date_list"><a href="{{url}}#disqus_thread" class="comments_link">Comments</a></span>
+	      <br />
+	      <br />
+	      <br />
+	    </footer>
+	</div>
+  {{/articles}}
+</section>
+
+<br />
+<br />
+<br />
+
+<section>
+  <div class='archives'>
+    <header>
+      <h3>Previous posts</h3>
+    </header>
+    <ul>
+		{{#previous_posts}}
+      <li>
+        <a href='{{url}}'>{{title}}</a>
+        <br>
+        <span class='archive_info'>
+          Published on {{date}}{{#show_updated_date}} (last updated on {{updated}}){{/show_updated_date}} and has <a class='comments_link' href='{{url}}#disqus_thread'>Comments</a>.
+        </span>
+      </li>
+		{{/previous_posts}}
+    </ul>
+  </div>
+</section>
+
+<br />
+<br />
+<br />
+
+<section>
+  <div class='archives'>
+    <header>
+      <h3>Archive</h3>
+    </header>
+    <ul>
+		{{#archive_years}}
+      <li>
+        <a href='http://cre8ivethought.com/blog/{{year}}'>Posts from {{year}}</a>
+        <br>
+      </li>
+		{{/archive_years}}
+    </ul>
+  </div>
+</section>

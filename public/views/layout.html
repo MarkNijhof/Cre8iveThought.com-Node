@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cre8ive Thought</title>
+    <link href='/stylesheets/screen.css' media='screen, projection' rel='stylesheet' type='text/css'>
+    <link href='/stylesheets/print.css' media='print' rel='stylesheet' type='text/css'>
+    <!--[if lt IE 8]>
+      <link href='/stylesheets/ie.css' media='screen, projectio' rel='stylesheet' type='text/css'>
+    <![endif]-->
+    <link href='http://cre8ivethought.s3.amazonaws.com/images/favicon.png' rel='icon' type='image/png'>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js'></script>
+    <script src='/javascripts/blog.js'></script>
+  </head>
+  <body class='three-col'>
+    <header>
+      <div id='header'>
+        <nav>
+          <div id='menu'>
+            <ul>
+              <li>
+                <a href='/blog/index'>Home</a>
+              </li>
+              <li>
+                <a href='http://feeds.feedburner.com/Fohjin'>RSS</a>
+              </li>
+              <li>
+                <a href='#About'>About</a>
+              </li>
+              <li>
+                <a href='http://twitter.com/MarkNijhof'>Twitter</a>
+              </li>
+              <li>
+                <a href='/'>Website</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div id='profile-picture'></div>
+      </div>
+    </header>
+    <div id='container'>
+      <div id='left-side'>
+        &nbsp;
+      </div>
+      <div id='main-area'>
+		<div id='content'>
+			{{{yield}}}
+			<br>
+            <br>
+	        <footer>
+	          <section>
+	            <a name='About'></a>
+	            <br>
+	            <br>
+	            <br>
+	            <div id='about'>
+	              <h3>
+	                About me
+	              </h3>
+	              <div id='profile-picture-about'></div>
+	              <p>
+	                Hi, my name is Mark Nijhof and I am using this space to express my own "creative" thoughts about software development and other things that interest me. If you have any questions then please don't hesitate to contact me:
+	                <br>
+	                <br>
+	                E-mail: Mark.Nijhof (@) Cre8iveThought.com
+	                <br>
+	                Phone: 0031 6 2383 0739
+	                <br>
+	                Twitter:
+	                <a href='http://twitter.com/MarkNijhof'>@MarkNijhof</a>
+	              </p>
+	            </div>
+	          </section>
+	          <br>
+	          <br>
+	          <section>
+	            <div id='license'>
+	              <a href='http://creativecommons.org/licenses/by/3.0/' rel='license'>
+	                <img alt='Creative Commons License' src='http://i.creativecommons.org/l/by/3.0/88x31.png' style='border-width: 0pt;'>
+	              </a>
+	              <br>
+	              This work is licensed under a <a href='http://creativecommons.org/licenses/by/3.0/' rel='license'>Creative Commons Attribution 3.0 Unported License</a>.
+	            </div>
+	          </section>
+	          <br>
+	          <br>
+	        </footer>
+		</div>
+      </div>
+      <div id='right-side'>
+        &nbsp;
+      </div>
+    </div>
+    <div id='footer'>
+      {{#show_stats}}
+      <div id='stats'>
+        <ul>
+          <li>{{words}} Words</li>
+          <li>{{characters}} Characters</li>
+          <li>{{readingTime}} Reading Time</li>
+        </ul>
+      </div>
+      {{/show_stats}}
+    </div>    
+    <script type='text/javascript'>
+      //<![CDATA[
+        (function() {
+          var links = document.getElementsByTagName('a');
+          var query = '?';
+          for(var i = 0; i < links.length; i++) {
+            if(links[i].href.indexOf('#disqus_thread') >= 0) {
+              query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+            }
+          }
+          document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/cre8ivethought/get_num_replies.js' + query + '"></' + 'script>');
+        })();
+      //]]>
+    </script>
+    <script type='text/javascript'>
+      //<![CDATA[
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      //]]>
+    </script>
+    <script type='text/javascript'>
+      //<![CDATA[
+        try {
+          var pageTracker = _gat._getTracker("UA-116586-8");
+          pageTracker._setDomainName(".cre8ivethought.com");
+          pageTracker._trackPageview();
+        } catch(err) {}
+      //]]>
+    </script>
+  </body>
+</html>
