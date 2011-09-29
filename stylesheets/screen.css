@@ -745,6 +745,7 @@ body.three-col #right-side {
   left: 0px;
   background: url("http://cre8ivethought.s3.amazonaws.com/images/layout/frame-bottom.png") repeat;
 }
+
 /* line 210, ../src/screen.scss */
 #footer #stats {
   color: gray;
