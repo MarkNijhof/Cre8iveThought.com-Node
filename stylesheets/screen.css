@@ -659,10 +659,17 @@ body.three-col #main-area {
   overflow-x: hidden;
 }
 /* line 135, ../src/screen.scss */
-body.three-col #content {
+body.three-col #content-wrapper {
   padding: 90px 60px 10px 70px;
   position: relative;
 }
+body.three-col #content {
+}
+body.three-col #content-width {
+  width: 666px;
+  -webkit-transition-property: -webkit-transform, opacity;
+  -webkit-transition-duration: 4s, 2s;
+  -webkit-transition-timing-function: ease-out, cubic-bezier(0.5, 0.2, 0.3, 1.0);}
 /* line 140, ../src/screen.scss */
 body.three-col #license {
   text-align: left;

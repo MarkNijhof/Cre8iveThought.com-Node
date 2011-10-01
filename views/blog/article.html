@@ -5,49 +5,50 @@
   </style>
 {{/show_css}}
 
-<article>
-  <div class='post'>
-    <header>
-      <div class='date_post'>{{date}}{{#show_updated_date}} ( last updated on {{updated}}){{/show_updated_date}}</div>
-      <br />
-      <h1>{{title}}</h1>
-    </header>
-    <div class='content'>
-	  {{{content}}}
+<div id='content-width'>
+  <article>
+    <div class='post'>
+      <header>
+        <div class='date_post'>{{date}}{{#show_updated_date}} ( last updated on {{updated}}){{/show_updated_date}}</div>
+        <br />
+        <h1>{{title}}</h1>
+      </header>
+      <div class='content'>
+  	  {{{content}}}
+      </div>
     </div>
-  </div>
-{{#show_disqus}}
-  <div class='comments'>
-    <script type='text/javascript'>
-      (function() {
-      var s = document.createElement('SCRIPT'), s1 = document.getElementsByTagName('SCRIPT')[0];
-      s.type = 'text/javascript';
-      s.async = true;
-      s.src = 'http://widgets.digg.com/buttons.js';
-      s1.parentNode.insertBefore(s, s1);
-      })();
-    </script>
-    <a class='DiggThisButton DiggCompact' href='http://digg.com/submit?related=no'></a>
-    &nbsp;
-    <a href='http://reddit.com/r/postrock/submit' onclick="window.location = 'http://reddit.com/r/postrock/submit?url=' + encodeURIComponent(window.location); return false">
-      <img alt='submit to reddit' border='0' src='http://reddit.com/static/spreddit7.gif' style='position: relative; top: -1px;'>
-    </a>
-    <div id='disqus_thread'>
+  {{#show_disqus}}
+    <div class='comments'>
       <script type='text/javascript'>
-        var disqus_url = '{{url}}{{#add_trailing_slash_for_disqus}}/{{/add_trailing_slash_for_disqus}}';
-        var disqus_skip_auth = true;
+        (function() {
+        var s = document.createElement('SCRIPT'), s1 = document.getElementsByTagName('SCRIPT')[0];
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'http://widgets.digg.com/buttons.js';
+        s1.parentNode.insertBefore(s, s1);
+        })();
       </script>
+      <a class='DiggThisButton DiggCompact' href='http://digg.com/submit?related=no'></a>
+      &nbsp;
+      <a href='http://reddit.com/r/postrock/submit' onclick="window.location = 'http://reddit.com/r/postrock/submit?url=' + encodeURIComponent(window.location); return false">
+        <img alt='submit to reddit' border='0' src='http://reddit.com/static/spreddit7.gif' style='position: relative; top: -1px;'>
+      </a>
+      <div id='disqus_thread'>
+        <script type='text/javascript'>
+          var disqus_url = '{{url}}{{#add_trailing_slash_for_disqus}}/{{/add_trailing_slash_for_disqus}}';
+          var disqus_skip_auth = true;
+        </script>
+      </div>
+      <script src='http://disqus.com/forums/{{disqus}}/embed.js' type='text/javascript'>
+        <noscript>
+          <a href='http://{{disqus}}.disqus.com/?url=ref'>View the discussion thread.</a>
+        </noscript>
+      </script>
+      <a class='dsq-brlink' href='http://disqus.com'>
+        blog comments powered by
+        <span class='logo-disqus'>Disqus</span>
+      </a>
     </div>
-    <script src='http://disqus.com/forums/{{disqus}}/embed.js' type='text/javascript'>
-      <noscript>
-        <a href='http://{{disqus}}.disqus.com/?url=ref'>View the discussion thread.</a>
-      </noscript>
-    </script>
-    <a class='dsq-brlink' href='http://disqus.com'>
-      blog comments powered by
-      <span class='logo-disqus'>Disqus</span>
-    </a>
-  </div>
-{{/show_disqus}}
-</article>
-
+  {{/show_disqus}}
+  </article>
+</div>

@@ -5,8 +5,9 @@
       "buster": "0.2.1",
       "express": "2.4.6",
       "stache": "0.1.0",
+      "mustache": "0.3.1-dev",
       "clientexpress": "0.7.2",
       "stylus": "0.15.4",
-	  "sugar": "0.9.5"
+      "sugar": "0.9.5"
     }
 }

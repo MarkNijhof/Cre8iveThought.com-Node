@@ -27,7 +27,7 @@ exports.load = function(json_url, call_back) {
 }
 
 exports.load_index_data = function(call_back) {
-  data_loader.load('http://data.cre8ivethought.com/blog//end:15/filter_by:title,summary,date,url', function(index_data) {
+  data_loader.load('http://data.cre8ivethought.com/blog/,end:15,filter_by:title,summary,date,url,add_trailing_slash_for_disqus', function(index_data) {
     var data = {
       articles: index_data.to(5),
       previous_posts: index_data.from(5),

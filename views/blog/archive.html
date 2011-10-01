@@ -1,49 +1,51 @@
 
-<section>
-  <div class="articles">
-    <header>
-      <h1>Archive for: {{slug}}</h1>
-      <hr />
-    </header>
-    {{#posts}}
-  		<div class="article">
-  	    <header>
-  	      <h2><a href="{{url}}">{{title}}</a></h2>
-  	    </header>
+<div id='content-width'>
+  <section>
+    <div class="articles">
+      <header>
+        <h1>Archive for: {{slug}}</h1>
+        <hr />
+      </header>
+      {{#posts}}
+    		<div class="article">
+    	    <header>
+    	      <h2><a href="{{url}}">{{title}}</a></h2>
+    	    </header>
 
-  	    <div class="content">
-  	      {{{summary}}}
-  	    </div>
+    	    <div class="content">
+    	      {{{summary}}}
+    	    </div>
 
-  	    <footer>
-  	      <span class="date_list">{{date}}{{#show_updated_date}} (last updated on {{updated}}){{/show_updated_date}}</span>
-  	      <br />
-  	      <span class="date_list"><a href="{{url}}#disqus_thread" class="comments_link">Comments</a></span>
-  	      <br />
-  	      <br />
-  	      <br />
-  	    </footer>
-  		</div>
-    {{/posts}}
-  </div>
-</section>
+    	    <footer>
+    	      <span class="date_list">{{date}}{{#show_updated_date}} (last updated on {{updated}}){{/show_updated_date}}</span>
+    	      <br />
+    	      <span class="date_list"><a href="{{url}}#disqus_thread" class="comments_link">Comments</a></span>
+    	      <br />
+    	      <br />
+    	      <br />
+    	    </footer>
+    		</div>
+      {{/posts}}
+    </div>
+  </section>
 
-<br />
-<br />
-<br />
+  <br />
+  <br />
+  <br />
 
-<section>
-  <div class='archives'>
-    <header>
-      <h3>Archive</h3>
-    </header>
-    <ul>
-		{{#archive_years}}
-      <li>
-        <a href='http://cre8ivethought.com/blog/{{year}}'>Posts from {{year}}</a>
-        <br>
-      </li>
-		{{/archive_years}}
-    </ul>
-  </div>
-</section>
+  <section>
+    <div class='archives'>
+      <header>
+        <h3>Archive</h3>
+      </header>
+      <ul>
+  		{{#archive_years}}
+        <li>
+          <a href='http://cre8ivethought.com/blog/{{year}}'>Posts from {{year}}</a>
+          <br>
+        </li>
+  		{{/archive_years}}
+      </ul>
+    </div>
+  </section>
+</div>

@@ -16,7 +16,7 @@ server.configure(function(){
   server.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
   server.use(server.router);
 
-  //server.register('.html', require('stache'));
+  server.register('.html', require('stache'));
   server.set('view engine', 'html');
 });
 
