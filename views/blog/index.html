@@ -38,7 +38,7 @@
           <a href='{{url}}'>{{title}}</a>
           <br>
           <span class='archive_info'>
-            Published on {{date}}{{#show_updated_date}} (last updated on {{updated}}){{/show_updated_date}} and has <a class='comments_link' href='{{url}}{{#add_trailing_slash_for_disqus}}/{{/add_trailing_slash_for_disqus}}#disqus_thread'>Comments</a>.
+            Published on {{date}} {{#show_updated_date}}(last updated on {{updated}}){{/show_updated_date}} and has <a class='comments_link' href='{{url}}{{#add_trailing_slash_for_disqus}}/{{/add_trailing_slash_for_disqus}}#disqus_thread'>Comments</a>.
           </span>
         </li>
   		{{/previous_posts}}
@@ -66,3 +66,20 @@
     </div>
   </section>
 </div>
+<script type='text/javascript'>
+  var links = document.getElementsByTagName('a');
+  var query = '?';
+  for(var i = 0; i < links.length; i++) {
+    if(links[i].href.indexOf('#disqus_thread') >= 0) {
+      query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+    }
+  }
+  document.getElementsByTagName('body')[0].appendChild((function() {
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.charset = 'utf-8';
+    s.src = 'http://disqus.com/forums/cre8ivethought/get_num_replies.js' + query;
+    return s;
+  })());
+</script>
+

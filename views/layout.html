@@ -25,6 +25,8 @@
     <script src='/javascripts/client.express.require.js' type='text/javascript'></script> -->
     <!-- <script src='/javascripts/client.express.require.ejs.js' type='text/javascript'></script> -->
 
+    <!-- <script src='/javascripts/client.express.min-latest.js'></script>
+    <script src='http://clientexpressjs.com/dist/client.express.require.stache.min-latest.js'></script> //-->
 
     <script src='http://clientexpressjs.com/dist/client.express.min-latest.js'></script>
     <script src='http://clientexpressjs.com/dist/client.express.require.stache.min-latest.js'></script>
@@ -136,20 +138,6 @@
       </div>
       {{/show_stats}}
     </div>    
-    <script type='text/javascript'>
-      //<![CDATA[
-        (function() {
-          var links = document.getElementsByTagName('a');
-          var query = '?';
-          for(var i = 0; i < links.length; i++) {
-            if(links[i].href.indexOf('#disqus_thread') >= 0) {
-              query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-            }
-          }
-          document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/cre8ivethought/get_num_replies.js' + query + '"></' + 'script>');
-        })();
-      //]]>
-    </script>
     <script type='text/javascript'>
       //<![CDATA[
         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

@@ -8,12 +8,12 @@ server.configure(function() {
 
 server.before('*', function(request, response, args, content_element, next) {
   args.locals.source = 'client';
-  $(content_element).animate({width:'toggle'}, 2000, function() { next(); });
-//  next();
+  $(content_element).animate({width:'toggle'}, 500, function() { next(); });
 });
 
 server.after('*', function(request, response, args, content_element, next) {
-  $(content_element).animate({width:'toggle'}, 2000, function() { next(); });
-//  next();
+  $(content_element).animate({width:'toggle'}, 500, function() { 
+    next(); 
+  });
 });
 
