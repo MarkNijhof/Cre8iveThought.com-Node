@@ -540,6 +540,17 @@ body.three-col h1, body.three-col h2, body.three-col h3, body.three-col h4 {
   background: url("http://cre8ivethought.s3.amazonaws.com/images/layout/h1.png") no-repeat -12px 10px;
   text-indent: 63px;
 }
+
+dsq-reply h1, dsq-reply h2, dsq-reply h3, dsq-reply h4 {
+  color: #424242;
+  margin: 0px 0px 0px -65px;
+  padding-bottom: 0px;
+  font-weight: 600;
+  font-size: 1.2em;
+  background: url("http://cre8ivethought.s3.amazonaws.com/images/layout/h1.png") no-repeat -12px 10px;
+  text-indent: 63px;
+}
+
 /* line 43, ../src/screen.scss */
 body.three-col h1 a, body.three-col h2 a, body.three-col h3 a, body.three-col h4 a {
   color: #424242;
