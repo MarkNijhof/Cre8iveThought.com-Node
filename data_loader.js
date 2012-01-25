@@ -19,7 +19,10 @@ exports.load = function(json_url, call_back) {
     });
 
     response.on('end', function() {
-      call_back(JSON.parse(content));
+      try
+      {
+        call_back(JSON.parse(content));
+      } catch(e) {}
     });
   });
   
