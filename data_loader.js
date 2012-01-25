@@ -4,6 +4,9 @@ var url = require('url');
 
 exports.load = function(json_url, call_back) {
 
+  if(json_url.substr(-1) == '/') {
+    json_url = json_url.substr(0, json_url.length - 1);
+  }
   var siteUrl = url.parse(json_url);
   var site = http.createClient(siteUrl.port || 80, siteUrl.host);
 
