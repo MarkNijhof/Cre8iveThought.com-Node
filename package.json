@@ -6,12 +6,14 @@
       "npm":  "1.1.x"
     },
     "dependencies": {
-      "buster": "0.2.1",
       "express": "3.x",
       "stache": "0.1.0",
       "mu2": "0.5.x",
       "clientexpress": "0.7.2",
       "stylus": "0.15.4",
       "sugar": "0.9.5"
-    }
+    }, 
+	"devDependencies": {
+        "buster": "0.2.1",
+	}
 }
