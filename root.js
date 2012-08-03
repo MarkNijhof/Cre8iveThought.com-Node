@@ -23,7 +23,7 @@ server.configure(function(){
 });
                       
 server.get('/', function(request, response) {
-  response.sendfile('/index.html');
+  response.sendfile('index.html');
 });
 
 server.use('/blog', require(__dirname + '/blog').routing());
