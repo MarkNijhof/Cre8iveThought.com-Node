@@ -8,6 +8,7 @@
     "dependencies": {
       "express": "3.x",
       "consolidate": "0.4.0",
+	  "mustache": "0.5.2",
       "clientexpress": "0.7.2",
       "stylus": "0.15.4",
       "sugar": "0.9.5"
