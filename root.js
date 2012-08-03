@@ -4,6 +4,7 @@ var clientexpress = require('clientexpress');
 
 var express = require("express");
 var server = express();
+var cons = require('consolidate');
 
 clientexpress.attach(server);
 
@@ -18,8 +19,8 @@ server.configure(function(){
   server.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
   server.use(server.router);
 
-  server.engine('html', require('mu2').compileAndRender);
-  server.set('view engine', 'html');
+  server.engine('html', cons.mustache);
+  server.set('view engine', '.html');
 });
                       
 server.get('/', function(request, response) {

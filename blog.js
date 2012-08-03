@@ -6,7 +6,6 @@ exports.routing = function() {
 
   server.get('/(index)?', function(request, response) {
     data_loader.load_index_data(function(data) {
-    
       data.articles.map(function(post) {
         post.url = post.url.replace('http://cre8ivethought.com', '');
         post.show_updated_date = (typeof post.updated != 'undefined' && post.updated != '' && post.date != post.updated);
@@ -15,10 +14,8 @@ exports.routing = function() {
       data.previous_posts.map(function(post) {
         post.show_updated_date = (typeof post.updated != 'undefined' && post.updated != '' && post.date != post.updated);
       });
-    
-      response.render('blog/index', { 
-        locals: data
-      });
+
+      response.render('blog/index.html', data);
     });
   });
 
