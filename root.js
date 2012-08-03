@@ -1,7 +1,9 @@
 
 var express = require('express');
 var clientexpress = require('clientexpress');
-var server = express.createServer();
+
+var express = require("express");
+var server = express();
 
 clientexpress.attach(server);
 
@@ -16,7 +18,7 @@ server.configure(function(){
   server.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
   server.use(server.router);
 
-  server.register('.html', require('stache'));
+  server.engine('html', require('mu2').compileAndRender);
   server.set('view engine', 'html');
 });
                       
