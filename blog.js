@@ -47,6 +47,7 @@ exports.routing = function() {
   
     console.log(post);
   
+  	response.layout = 'layouts/layout.html';
     response.render('blog/article.html', post);
   };
   

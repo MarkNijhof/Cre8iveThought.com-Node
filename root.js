@@ -10,7 +10,6 @@ clientexpress.attach(server);
 
 server.configure(function(){
   server.use(express.logger());
-  server.set('views', __dirname + '/views/');
   server.use(express.methodOverride());
   server.use(express.bodyParser());
   server.use(express.cookieParser());
@@ -19,8 +18,10 @@ server.configure(function(){
   server.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
   server.use(server.router);
 
-  server.engine('html', cons.mustache);
-  server.set('view engine', '.html');
+  server.engine('html', cons.hogan);
+  server.set('view engine', 'html');
+  server.set('view options',{layout:true});
+  server.set('views', __dirname + '/views/');
 });
                       
 server.get('/', function(request, response) {
