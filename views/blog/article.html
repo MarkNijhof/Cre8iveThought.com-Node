@@ -94,6 +94,14 @@
       <div class='content'>
   	  {{{content}}}
       </div>
+	  <div id='keywords'>
+		  <ul>
+		  	<li>Keywords:</li> 
+		  {{#keywords}}
+		  	<li><b>"{{.}}"</b></li>
+		  {{/keywords}}
+		  </ul>
+	  </div>
     </div>
   {{#show_disqus}}
     <div class='comments'>
