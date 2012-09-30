@@ -6,7 +6,6 @@ exports.routing = function() {
 
   server.get('/(index)?', function(request, response) {
     data_loader.load_index_data(function(data) {
-    
       data.articles.map(function(post) {
         post.url = post.url.replace('http://cre8ivethought.com', '');
         post.show_updated_date = (typeof post.updated != 'undefined' && post.updated != '' && post.date != post.updated);
@@ -15,10 +14,8 @@ exports.routing = function() {
       data.previous_posts.map(function(post) {
         post.show_updated_date = (typeof post.updated != 'undefined' && post.updated != '' && post.date != post.updated);
       });
-    
-      response.render('blog/index', { 
-        locals: data
-      });
+
+      response.render('blog/index.html', data);
     });
   });
 
@@ -50,9 +47,8 @@ exports.routing = function() {
   
     console.log(post);
   
-    response.render('blog/article', { 
-      locals: post
-    });
+  	response.layout = 'layouts/layout.html';
+    response.render('blog/article.html', post);
   };
   
   var show_summaries = function(response, slug, posts) {
@@ -60,20 +56,16 @@ exports.routing = function() {
       post.show_updated_date = (typeof post.updated != 'undefined' && post.updated != '' && post.date != post.updated);
     });
   
-    response.render('blog/archive', { 
-      locals: {
+    response.render('blog/archive.html', {
         posts: posts, 
         slug: slug,
         archive_years: [{year: '2011'}, {year: '2010'}, {year: '2009'}]
-      }
-    });
+      });
   };
   
   var show_not_found = function(response, slug) {
     response.render('404', { 
-      locals: {
-        slug: slug
-      }
+      slug: slug
     });
   };
   

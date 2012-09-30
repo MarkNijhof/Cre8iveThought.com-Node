@@ -1,13 +1,15 @@
 
 var express = require('express');
 var clientexpress = require('clientexpress');
-var server = express.createServer();
+
+var express = require("express");
+var server = express();
+var cons = require('consolidate');
 
 clientexpress.attach(server);
 
 server.configure(function(){
   server.use(express.logger());
-  server.set('views', __dirname + '/views/');
   server.use(express.methodOverride());
   server.use(express.bodyParser());
   server.use(express.cookieParser());
@@ -16,12 +18,14 @@ server.configure(function(){
   server.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
   server.use(server.router);
 
-  server.register('.html', require('stache'));
+  server.engine('html', cons.hogan);
   server.set('view engine', 'html');
+  server.set('view options',{layout:true});
+  server.set('views', __dirname + '/views/');
 });
                       
 server.get('/', function(request, response) {
-  response.sendfile('/index.html');
+  response.sendfile('index.html');
 });
 
 server.use('/blog', require(__dirname + '/blog').routing());

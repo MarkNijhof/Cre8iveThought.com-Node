@@ -4,23 +4,28 @@ var url = require('url');
 
 exports.load = function(json_url, call_back) {
 
-  if(json_url.substr(-1) == '/') {
-    json_url = json_url.substr(0, json_url.length - 1);
-  }
-  var siteUrl = url.parse(json_url);
-  var site = http.createClient(siteUrl.port || 80, siteUrl.host);
-
-  var request = site.request("GET", siteUrl.pathname, {'host' : siteUrl.host});
+  // if(json_url.substr(-1) == '/') {
+  //   json_url = json_url.substr(0, json_url.length - 1);
+  // }
+  // var siteUrl = url.parse(json_url);
+  // 
+  // console.log(siteUrl.pathname);
+  // 
+  // var options = {
+  //   host: siteUrl.host,
+  //   port: siteUrl.port || 80,
+  //   path: siteUrl.pathname,
+  //   method: 'GET'
+  // };
   
   var content = "";
-
-  request.on('response', function(response) {
+  var request = http.get(json_url, function(response) {
     response.setEncoding('utf8');
 
     response.on('data', function(chunk) {
       content += chunk;
     });
-
+	
     response.on('end', function() {
       try
       {
@@ -28,7 +33,10 @@ exports.load = function(json_url, call_back) {
       } catch(e) {}
     });
   });
-  
+
+  request.on('error', function(e) {
+    console.log('problem with request: ' + e.message);
+  });
   request.end();
 }
 
