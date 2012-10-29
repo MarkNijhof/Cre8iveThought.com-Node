@@ -109,24 +109,26 @@
       <div id="inqob_job_postings"></div>
       <script type="text/javascript" charset="utf-8">
         var __inqob_settings = {
-          email_address: 'mark.nijhof@cre8ivethought.com',
-          price: 10
+          email_address:  'mark.nijhof@cre8ivethought.com',
+          token:          '',
+          debug: true,
+          items: [{
+            price: 20
+          }]
         };
 
-        (function() {
+        (function(is) {
           var sc = document.createElement('script'); sc.type = 'text/javascript'; sc.async = true;
           var src = (document.location.protocol == 'https:' ? 'https://' : 'http://') + 'inqob.com/get/script';
-          var query = [];
-          query.push('?t='+ new Date().getTime())
-          query.push('email_address=' + __inqob_settings.email_address)
-          query.push('price=' + __inqob_settings.price)
-          query.push('keyword=' + __inqob_settings.keyword)
-          query.push('token=' + __inqob_settings.token)
-          query.push('href=' + encodeURIComponent(window.location.href))
-          sc.src = src + query.join('&')
+          var q = [];
+          q.push('?t='+ new Date().getTime()); 
+          q.push('token=' + is.token); 
+          q.push('email_address=' + is.email_address); 
+          q.push('href=' + encodeURIComponent(window.location.href));
+          sc.src = src + q.join('&');
           var s = document.getElementsByTagName('script')[0]; 
           s.parentNode.insertBefore(sc, s);
-        })();      
+        })(__inqob_settings);      
       </script>
     </div>
     <div class='comments'>
