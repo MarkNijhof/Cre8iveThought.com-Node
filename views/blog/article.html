@@ -107,29 +107,6 @@
   <div class="row nudge-top">
     <div class='content'>
       <div id="inqob_job_postings"></div>
-      <script type="text/javascript" charset="utf-8">
-        var __inqob_settings = {
-          email_address:  'mark.nijhof@cre8ivethought.com',
-          token:          '',
-          debug: true,
-          items: [{
-            price: 20
-          }]
-        };
-
-        (function(is) {
-          var sc = document.createElement('script'); sc.type = 'text/javascript'; sc.async = true;
-          var src = (document.location.protocol == 'https:' ? 'https://' : 'http://') + 'inqob.com/get/script';
-          var q = [];
-          q.push('?t='+ new Date().getTime()); 
-          q.push('token=' + is.token); 
-          q.push('email_address=' + is.email_address); 
-          q.push('href=' + encodeURIComponent(window.location.href));
-          sc.src = src + q.join('&');
-          var s = document.getElementsByTagName('script')[0]; 
-          s.parentNode.insertBefore(sc, s);
-        })(__inqob_settings);      
-      </script>
     </div>
     <div class='comments'>
       <!-- <script type='text/javascript'>
@@ -218,6 +195,28 @@
       </div>
       {{/show_stats}}
     </div>    
+    <script type="text/javascript" charset="utf-8">
+      var __inqob_settings = {
+        email_address:  'mark.nijhof@cre8ivethought.com',
+        token:          '',
+        items: [{
+          price: 20,
+        }]
+      };
+
+      (function(is) {
+        var sc = document.createElement('script'); sc.type = 'text/javascript'; sc.async = true;
+        var src = (document.location.protocol == 'https:' ? 'https://' : 'http://') + 'inqob.com/get/script';
+        var q = [];
+        q.push('?t='+ new Date().getTime()); 
+        q.push('token=' + is.token); 
+        q.push('email_address=' + is.email_address); 
+        q.push('href=' + encodeURIComponent(window.location.href));
+        sc.src = src + q.join('&');
+        var s = document.getElementsByTagName('script')[0]; 
+        s.parentNode.insertBefore(sc, s);
+      })(__inqob_settings);      
+    </script>
     <script type='text/javascript'>
       //<![CDATA[
         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
