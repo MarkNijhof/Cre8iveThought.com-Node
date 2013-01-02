@@ -90,6 +90,9 @@
         <div class='date_post'>{{date}}{{#show_updated_date}} ( last updated on {{updated}}){{/show_updated_date}}</div>
         <br />
         <h1>{{title}}</h1>
+        <div class='content'>
+          <div id="inqob_job_postings"></div>
+        </div>
       </header>
       <div class='content'>
   	  {{{content}}}
@@ -105,9 +108,6 @@
     </div>
   {{#show_disqus}}
   <div class="row nudge-top">
-    <div class='content'>
-      <div id="inqob_job_postings"></div>
-    </div>
     <div class='comments'>
       <!-- <script type='text/javascript'>
         (function() {
