@@ -19,6 +19,10 @@ exports.routing = function() {
     });
   });
 
+  server.get('/ls4d-embeded', function(request, response) {
+    response.render('blog/ls4d-embeded.html', {});
+  });
+
  server.get('/*', function(request, response) {
     data_loader.load_post_data(request.params[0], function(data) {
     
