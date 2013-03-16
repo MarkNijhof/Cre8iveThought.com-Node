@@ -9,8 +9,14 @@
     <![endif]-->
     <link href='http://cre8ivethought.s3.amazonaws.com/images/favicon.png' rel='icon' type='image/png'>
     <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js'></script>
+
+    {{#show_css}}
+      <style type='text/css'>
+        {{css}}
+      </style>
+    {{/show_css}}
   </head>
-  <body class='three-col'>
+  <body>
     <header>
       <div id='header'>
         <nav>
@@ -38,126 +44,95 @@
           </div>
         </nav>
         <div id='profile-picture'></div>
+        <br/>
+        <br/>
+        <br/>
+        <iframe style="float:right;" height="400" src="/blog/ls4d-embeded" frameborder="0" allowtransparency="true"></iframe>
       </div>
     </header>
-    <div id='container'>
-      <div id='left-side'>
-        &nbsp;
-      </div>
-      <div id='main-area'>
-		<div id='content-wrapper'>
-		  <div id='content'>
 
-{{#show_css}}
-  <style type='text/css'>
-    {{css}}
-  </style>
-{{/show_css}}
-
-<div id='content-width'>
-  <article>
-    <div class='post'>
-      <header>
-        <div class='date_post'>{{date}}{{#show_updated_date}} ( last updated on {{updated}}){{/show_updated_date}}</div>
-        <br />
-        <div class='date_post'>Have you seen my latest project: <a href='http://ls4d.com'>LS4D</a>?</div>
-        <br />
-        <h1>{{title}}</h1>
-      </header>
-      <div class='content'>
-  	  {{{content}}}
-      </div>
-	  <div id='keywords'>
-		  <ul>
-		  	<li>Keywords:</li> 
-		  {{#keywords}}
-		  	<li><b>"{{.}}"</b></li>
-		  {{/keywords}}
-		  </ul>
-	  </div>
-    </div>
-    <div class='content'>
-      <div id="inqob_job_postings"></div>
-    </div>
-    <center>
-    <iframe width="320" height="400" src="/blog/ls4d-embeded" frameborder="0" allowtransparency="true"></iframe>
-    </center>
-  {{#show_disqus}}
-  <div class="row nudge-top">
-    <div class='comments'>
-      <!-- <script type='text/javascript'>
-        (function() {
-        var s = document.createElement('SCRIPT'), s1 = document.getElementsByTagName('SCRIPT')[0];
-        s.type = 'text/javascript';
-        s.async = true;
-        s.src = 'http://widgets.digg.com/buttons.js';
-        s1.parentNode.insertBefore(s, s1);
-        })();
-      </script> -->
-      <!-- <a class='DiggThisButton DiggCompact' href='http://digg.com/submit?related=no'></a>
-      &nbsp;
-      <a href='http://reddit.com/r/postrock/submit' onclick="window.location = 'http://reddit.com/r/postrock/submit?url=' + encodeURIComponent(window.location); return false">
-        <img alt='submit to reddit' border='0' src='http://reddit.com/static/spreddit7.gif' style='position: relative; top: -1px;'>
-      </a> -->
-      <div id='disqus_thread'>
-        <script type='text/javascript'>
-          var disqus_url = '{{url}}{{#add_trailing_slash_for_disqus}}/{{/add_trailing_slash_for_disqus}}';
-          var disqus_skip_auth = true;
-        </script>
-      </div>
-      <script src='http://disqus.com/forums/{{disqus}}/embed.js' type='text/javascript'></script>
-    </div>
-  {{/show_disqus}}
-  </article>
-</div>
-
-			</div>
-			<br>
-      <br>
-      <footer>
-        <section>
-          <a name='About'></a>
-          <br>
-          <br>
-          <br>
-          <div id='about'>
-            <h3>
-              About me
-            </h3>
-            <div id='profile-picture-about'></div>
-            <p>
-              Hi, my name is Mark Nijhof and I am using this space to express my own "creative" thoughts about software development and other things that interest me. If you have any questions then please don't hesitate to contact me:
-              <br>
-              <br>
-              E-mail: Mark.Nijhof (@) Cre8iveThought.com
-              <br>
-              Phone: 0049 151 11 34 21 81
-              <br>
-              Twitter:
-              <a href='http://twitter.com/MarkNijhof'>@MarkNijhof</a>
-            </p>
+    <div id='outer-content'>
+      <div id='spacer'></div>
+  		<div id='content'>
+        <article>
+          <div class='date_post'>{{date}}{{#show_updated_date}} ( last updated on {{updated}}){{/show_updated_date}}</div>
+          <br />
+          <div class='date_post'>Have you seen my latest project: <a href='http://ls4d.com'>LS4D</a>?</div>
+          <br />
+          <h1>{{title}}</h1>
+      	  {{{content}}}
+    	    <div id='keywords'>
+      		  <ul>
+      		  	<li>Keywords:</li> 
+      		  {{#keywords}}
+      		  	<li><b>"{{.}}"</b></li>
+      		  {{/keywords}}
+      		  </ul>
           </div>
-        </section>
-        <br>
-        <br>
-        <section>
-          <div id='license'>
-            <a href='http://creativecommons.org/licenses/by/3.0/' rel='license'>
-              <img alt='Creative Commons License' src='http://i.creativecommons.org/l/by/3.0/88x31.png' style='border-width: 0pt;'>
-            </a>
+        </article>
+      </div>
+  		<div id='content'>
+        <div id="inqob_job_postings"></div>
+        <br/>
+        <br/>
+      </div>
+  		<div id='content'>
+        {{#show_disqus}}
+          <div class='comments'>
+            <div id='disqus_thread'>
+              <script type='text/javascript'>
+                var disqus_url = '{{url}}{{#add_trailing_slash_for_disqus}}/{{/add_trailing_slash_for_disqus}}';
+                var disqus_skip_auth = true;
+              </script>
+            </div>
+            <script src='http://disqus.com/forums/{{disqus}}/embed.js' type='text/javascript'></script>
+          </div>
+      		<br>
+          <br>
+        {{/show_disqus}}
+      </div>
+
+  		<div id='content'>
+        <footer>
+          <section>
+            <a name='About'></a>
             <br>
-            This work is licensed under a <a href='http://creativecommons.org/licenses/by/3.0/' rel='license'>Creative Commons Attribution 3.0 Unported License</a>.
-          </div>
-        </section>
-        <br>
-        <br>
-        <br>
-        <br>
-      </footer>
-		</div>
-      </div>
-      <div id='right-side'>
-        &nbsp;
+            <br>
+            <br>
+            <div id='about'>
+              <h3>
+                About me
+              </h3>
+              <div id='profile-picture-about'></div>
+              <p>
+                Hi, my name is Mark Nijhof and I am using this space to express my own "creative" thoughts about software development and other things that interest me. If you have any questions then please don't hesitate to contact me:
+                <br>
+                <br>
+                E-mail: Mark.Nijhof (@) Cre8iveThought.com
+                <br>
+                Phone: 0049 151 11 34 21 81
+                <br>
+                Twitter:
+                <a href='http://twitter.com/MarkNijhof'>@MarkNijhof</a>
+              </p>
+            </div>
+          </section>
+          <br>
+          <br>
+          <section>
+            <div id='license'>
+              <a href='http://creativecommons.org/licenses/by/3.0/' rel='license'>
+                <img alt='Creative Commons License' src='http://i.creativecommons.org/l/by/3.0/88x31.png' style='border-width: 0pt;'>
+              </a>
+              <br>
+              This work is licensed under a <a href='http://creativecommons.org/licenses/by/3.0/' rel='license'>Creative Commons Attribution 3.0 Unported License</a>.
+            </div>
+          </section>
+          <br>
+          <br>
+          <br>
+          <br>
+        </footer>
       </div>
     </div>
     <div id='footer'>

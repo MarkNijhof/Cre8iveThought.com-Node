@@ -1,8 +1,8 @@
 
-var express = require('express');
-
+var express = require("express");
+  
 exports.routing = function() {
-  var server = express.createServer();
+  var server = express();
 
   server.get('/(index)?', function(request, response) {
     data_loader.load_index_data(function(data) {
