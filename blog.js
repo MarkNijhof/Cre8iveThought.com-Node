@@ -9,7 +9,6 @@ exports.routing = function() {
       data.articles.map(function(post) {
         post.url = post.url.replace('http://cre8ivethought.com', '');
         post.show_updated_date = (typeof post.updated != 'undefined' && post.updated != '' && post.date != post.updated);
-        post.description = post.content.length > 100 ? post.content.substring(0, 100) : post.content
       });
       
       data.previous_posts.map(function(post) {
@@ -49,6 +48,7 @@ exports.routing = function() {
     post.show_disqus = (typeof post.disqus != 'undefined' && post.disqus != "");
     post.show_updated_date = (typeof post.updated != 'undefined' && post.updated != '' && post.date != post.updated);
     post.show_stats = (typeof post.words != 'undefined' && post.words != '');
+    post.description = post.content.length > 100 ? post.content.substring(0, 100) : post.content
   
     console.log(post);
   
