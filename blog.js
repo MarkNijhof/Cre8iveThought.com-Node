@@ -48,7 +48,7 @@ exports.routing = function() {
     post.show_disqus = (typeof post.disqus != 'undefined' && post.disqus != "");
     post.show_updated_date = (typeof post.updated != 'undefined' && post.updated != '' && post.date != post.updated);
     post.show_stats = (typeof post.words != 'undefined' && post.words != '');
-    post.description = post.content.length > 100 ? post.content.substring(0, 100) : post.content
+    post.description = post.content.length > 100 ? post.content.substring(3, 100) : post.content.substring(3, post.content.length-3)
   
     console.log(post);
   
