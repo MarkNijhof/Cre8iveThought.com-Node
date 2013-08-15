@@ -325,12 +325,16 @@ center {
 }
 
 blockquote {
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
     background-color: #666666;
     color: white;
 }
 
 blockquote p {
     padding: 0px 10px;
+    maring-bottom: -10px;
 }
 
 blockquote:before {
