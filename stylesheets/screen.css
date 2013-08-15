@@ -324,6 +324,15 @@ center {
   white-space: nowrap;
 }
 
+blockquote {
+    background-color: #666666;
+    color: white;
+}
+
+blockquote p {
+    padding: 0px 10px;
+}
+
 blockquote:before {
   background: transparent url(/images/top-right.png) scroll no-repeat top right;
   margin-bottom: -20px;
