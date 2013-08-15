@@ -323,3 +323,27 @@ center {
   padding-right: 10px;
   white-space: nowrap;
 }
+
+blockquote:before {
+  background: transparent url(top-right.png) scroll no-repeat top right;
+  margin-bottom: -20px;
+  height: 30px;
+  display: block;
+  border: none;
+  content: url(top-left.png);
+  padding: 0;
+  line-height: 0.1;
+  font-size: 1px;
+}
+
+blockquote:after {
+  display: block;
+  line-height: 0.1;
+  font-size: 1px;
+  content:  url(bottom-left.png);
+  margin: 0 0 -1px 0;
+  height: 30px;
+  background: white;
+  background: transparent url(bottom-right.png) scroll no-repeat bottom right ;
+  padding: 0;
+}
