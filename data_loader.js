@@ -45,7 +45,7 @@ exports.load_index_data = function(call_back) {
     var data = {
       articles: index_data.to(5),
       previous_posts: index_data.from(5),
-      archive_years: [{year: '2011'}, {year: '2010'}, {year: '2009'}]
+      archive_years: [{year: '2014'}, {year: '2013'}, {year: '2012'}, {year: '2011'}, {year: '2010'}, {year: '2009'}]
     };
     call_back(data);
   });

@@ -64,7 +64,7 @@ exports.routing = function() {
     response.render('blog/archive.html', {
         posts: posts, 
         slug: slug,
-        archive_years: [{year: '2013'}, {year: '2012'}, {year: '2011'}, {year: '2010'}, {year: '2009'}]
+        archive_years: [{year: '2014'}, {year: '2013'}, {year: '2012'}, {year: '2011'}, {year: '2010'}, {year: '2009'}]
       });
   };
   
