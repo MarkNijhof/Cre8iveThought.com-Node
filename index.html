@@ -30,17 +30,13 @@
 
 
 				cards.click(function(){
-				  location.href = '#/MarkNijhof';
+				  location.href = '#/Contact';
 				});
 				
 				var app = $.sammy(function() {
 
   				this.get('#/Home', function() { 
   				  animator.bringInBigCards();
-          });
-
-  				this.get('#/MarkNijhof', function() { 
-  				  animator.loadContent(function(){ return loadText("#about_template"); } );
           });
 
   				this.get('#/Contact', function() { 
@@ -68,19 +64,10 @@
 			<p>If you have any questions or want to contact me about potential consulting or coaching work, then please don&#39;t hesitate use any one of the options listed below.</p> 
 			<h2>Mark Nijhof</h2>
 			<ul>
-				<li>Phone: 0049 151 11 34 21 81</li>
 				<li>Skype: marknijhof or Mark@Nijhof.com</li>
 				<li>E-mail: <a href="mailto:Mark.Nijhof@Cre8iveThought.com">Mark.Nijhof@Cre8iveThought.com</a></li>
 				<li>Twitter: <a href="http://twitter.com/MarkNijhof">@MarkNijhof</a></li>
 			</ul>
-		</div>
-		</script>
-		<script type="text/html" id="about_template"> 
-		<div class="textBlock">
-			<h1>Mark Nijhof</h1>
-      <p>Mark is a Software Developer experienced in the Microsoft .Net framework, he has developed / implemented a diverse range of Object-Oriented software solutions. Mark has been working closely with customers to achieve high quality solutions. Mark is always learning new technologies en theories to improve his programming skills; he is especially interested in all the different Object-Oriented design principles, and in languages like Ruby and Node.js.</p>
-      <h2>Specialties:</h2>
-      <p>Creative thinker, Team player, C#, .Net, Ruby, Agile Software Development, TDD, DDD, Continuous Integration, Web Services, Web Applications</p>
 		</div>
 		</script>
 	</head>
