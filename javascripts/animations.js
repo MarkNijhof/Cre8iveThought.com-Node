@@ -23,7 +23,6 @@ var Animator = function(cards, frame, image_location){
 		var ul = menu.find('ul');
 		ul.append('<li id="menu-home"><a href="#/Home">Home</a></li>');
 		ul.append('<li id="menu-blog"><a href="#/Blog">Blog</a></li>');
-		ul.append('<li id="menu-bekk"><a href="#/MarkNijhof">Mark Nijhof</a></li>');
 		ul.append('<li id="menu-contact"><a href="#/Contact">Contact</a></li>');		
 		frame.append(menu);
 	}
